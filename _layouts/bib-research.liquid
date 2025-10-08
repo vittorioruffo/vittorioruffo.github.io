@@ -69,8 +69,8 @@
       {% assign abstract_trimmed = entry.abstract | strip %}
       {% if abstract_trimmed != "" %}
       <div class="abstract-section">
-        <div class="abstract-toggle" onclick="toggleAbstract('{{ entry.key }}')">Abstract ▼</div>
-        <div id="{{ entry.key }}" class="abstract-content">
+        <div class="abstract-toggle" onclick="toggleAbstract('{{ entry.key }}')">Abstract ▲</div>
+        <div id="{{ entry.key }}" class="abstract-content show">
           {{ entry.abstract }}
         </div>
       </div>

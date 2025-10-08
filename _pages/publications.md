@@ -210,10 +210,34 @@ header.post-header {
     padding: 0.75rem 1rem;
   }
 }
+
+.research-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--global-divider-color);
+  color: var(--global-text-color);
+}
+
+.research-section {
+  margin-bottom: 3rem;
+}
 </style>
 
 <div class="research-container">
-  {% bibliography --template bib-research %}
+  <!-- Working Papers Section -->
+  <div class="research-section">
+    <h2 class="research-section-title">Working Papers</h2>
+    {% bibliography --template bib-research --query @*[note=Working Paper] %}
+  </div>
+
+  <!-- Work in Progress Section -->
+  <div class="research-section">
+    <h2 class="research-section-title">Work in Progress</h2>
+    {% bibliography --template bib-research --query @*[note=Work in Progress] %}
+  </div>
 </div>
 
 <script>
