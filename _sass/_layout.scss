@@ -23,10 +23,12 @@ body {
 
 .hero-section {
   position: relative;
-  width: 100%;
-  height: 400px;
+  width: 100vw; // Full viewport width
+  height: 300px; // Shorter, more subtle height
   margin-top: -56px; // Offset fixed nav height
   margin-bottom: 2rem;
+  margin-left: 50%; // Break out of container
+  transform: translateX(-50%); // Center it
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -34,14 +36,16 @@ body {
 
   .hero-background {
     position: absolute;
-    top: 0;
+    top: -50px; // Extra height for parallax effect
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% + 100px); // Extended height for smooth parallax
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; // Parallax effect - image stays fixed while content scrolls
     z-index: 1;
+    will-change: transform; // Performance optimization for parallax
   }
 
   .hero-overlay {
@@ -90,7 +94,11 @@ body:not(.fixed-top-nav) .hero-section {
 // Responsive adjustments
 @media (max-width: 768px) {
   .hero-section {
-    height: 300px;
+    height: 250px; // Shorter on tablets
+
+    .hero-background {
+      background-attachment: scroll; // Disable parallax on mobile for better performance
+    }
 
     .hero-content {
       .hero-title {
@@ -106,7 +114,13 @@ body:not(.fixed-top-nav) .hero-section {
 
 @media (max-width: 576px) {
   .hero-section {
-    height: 250px;
+    height: 200px; // Even shorter on mobile
+
+    .hero-background {
+      background-attachment: scroll; // Disable parallax on mobile for better performance
+      top: 0;
+      height: 100%;
+    }
 
     .hero-content {
       padding: 1rem;
