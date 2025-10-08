@@ -170,13 +170,27 @@ To reorder papers, simply rearrange them in the `.bib` file.
 
 To preview:
 1. Run `bundle exec jekyll serve` in your terminal
-2. Open `http://localhost:4000/publications/` in your browser
+2. Open `http://localhost:4000/research/` in your browser
 3. Edit `papers.bib` and refresh to see changes
+
+## Dynamic Content Features
+
+The page automatically hides sections when they are empty:
+
+- **Empty Abstracts** - If `abstract={}` is empty, the entire abstract section (including toggle) is hidden
+- **Empty Conferences** - If `conferences={}` is empty, the "Selected Conferences:" section is hidden
+- **No Award** - If `award` is not set, the award badge is hidden
+- **No Links** - PDF/Slides/Code buttons only appear if those fields are set
+- **No Audio** - Audio player only appears if `audio` field is set
+
+This keeps your page clean - only showing relevant information for each paper.
 
 ## Tips
 
 - Leave `abstract={}` empty to hide the abstract section for work-in-progress papers
-- Use semicolons (`;`) to separate multiple conferences
+- Leave `conferences={}` empty and the entire conference section will be hidden
+- Use semicolons (`;`) to separate multiple conferences: `conferences={EFA 2025; AFA 2024; WFA 2024}`
 - Images make the page more visually appealing - try to add one for each paper
 - The system automatically excludes you from the author list and shows "with [coauthors]"
 - Conference tags use a monospace font to match the template style
+- The layout automatically adapts to mobile devices

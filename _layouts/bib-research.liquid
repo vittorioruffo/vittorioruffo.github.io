@@ -66,7 +66,9 @@
         </div>
       {% endif %}
       
-      {% if entry.abstract %}
+      {% comment %} Only show abstract section if abstract exists and is not empty {% endcomment %}
+      {% assign abstract_trimmed = entry.abstract | strip %}
+      {% if abstract_trimmed != "" %}
       <div class="abstract-section">
         <div class="abstract-toggle" onclick="toggleAbstract('{{ entry.key }}')">Abstract ▼</div>
         <div id="{{ entry.key }}" class="abstract-content">
@@ -76,18 +78,24 @@
       {% endif %}
       
       <div class="paper-meta">
+        {% comment %} Only show award if it exists {% endcomment %}
         {% if entry.award %}
         <div style="margin-top: 0.5rem;">
           <span class="award">{{ entry.award_name | default: entry.award }}</span>
         </div>
         {% endif %}
         
-        {% if entry.conferences %}
+        {% comment %} Only show conferences if field exists and is not empty {% endcomment %}
+        {% assign conferences_trimmed = entry.conferences | strip %}
+        {% if conferences_trimmed != "" %}
         <div class="conferences">
           Selected Conferences: 
           {% assign conf_list = entry.conferences | split: ';' %}
           {% for conf in conf_list %}
-            <span class="conference-tag">{{ conf | strip }}</span>
+            {% assign conf_trimmed = conf | strip %}
+            {% if conf_trimmed != "" %}
+              <span class="conference-tag">{{ conf_trimmed }}</span>
+            {% endif %}
           {% endfor %}
         </div>
         {% endif %}

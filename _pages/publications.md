@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /publications/
+permalink: /research/
 title: research
 description: Working papers and research in progress.
 nav: true
@@ -14,71 +14,81 @@ nav_order: 2
 }
 
 .research-paper {
-  margin-bottom: 4rem;
-  border-bottom: 1px solid var(--global-divider-color);
-  padding-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
 }
 
-.research-paper:last-child {
-  border-bottom: none;
+.research-paper:not(:last-child) {
+  border-bottom: 1px solid var(--global-divider-color);
 }
 
 .paper-content {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
+  margin-bottom: 0.5rem;
 }
 
 .paper-image {
   flex-shrink: 0;
-  width: 200px;
+  width: 180px;
 }
 
 .paper-image img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .paper-details {
   flex-grow: 1;
+  min-width: 0;
 }
 
 .paper-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 0.75rem;
   color: var(--global-text-color);
+  line-height: 1.5;
+}
+
+.paper-title strong {
+  font-weight: 600;
 }
 
 .paper-authors {
   font-style: italic;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   color: var(--global-text-color-light);
+  font-size: 0.95rem;
 }
 
 .paper-authors a {
   color: var(--global-text-color-light);
   text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: border-color 0.2s;
 }
 
 .paper-authors a:hover {
   color: var(--global-theme-color);
-  text-decoration: underline;
+  border-bottom-color: var(--global-theme-color);
 }
 
 .abstract-section {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .abstract-toggle {
   cursor: pointer;
   color: var(--global-theme-color);
-  font-weight: 500;
+  font-weight: 400;
   user-select: none;
   display: inline-block;
   margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 .abstract-toggle:hover {
@@ -87,12 +97,13 @@ nav_order: 2
 
 .abstract-content {
   display: none;
-  margin-top: 0.5rem;
-  padding: 1rem;
+  margin-top: 0.75rem;
+  padding: 1rem 1.25rem;
   background-color: var(--global-bg-color);
   border-left: 3px solid var(--global-theme-color);
-  line-height: 1.6;
+  line-height: 1.65;
   text-align: justify;
+  font-size: 0.95rem;
 }
 
 .abstract-content.show {
@@ -100,11 +111,11 @@ nav_order: 2
 }
 
 .paper-meta {
-  margin-top: 1rem;
+  margin-top: 0.75rem;
 }
 
 .conferences {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   line-height: 1.8;
 }
 
@@ -112,19 +123,20 @@ nav_order: 2
   display: inline-block;
   background-color: var(--global-theme-color);
   color: white;
-  padding: 0.2rem 0.6rem;
-  margin: 0.2rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-family: monospace;
+  padding: 0.15rem 0.5rem;
+  margin: 0.15rem 0.15rem 0.15rem 0;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
 }
 
 .award {
   display: inline-block;
   background-color: #d4af37;
   color: white;
-  padding: 0.2rem 0.6rem;
-  margin: 0.2rem;
+  padding: 0.25rem 0.7rem;
+  margin: 0.15rem;
   border-radius: 3px;
   font-size: 0.85rem;
   font-weight: 500;
@@ -132,28 +144,34 @@ nav_order: 2
 
 .audio-summary {
   margin-top: 1rem;
+  font-size: 0.95rem;
 }
 
 .paper-links {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-top: 0.5rem;
 }
 
 .paper-link-btn {
   display: inline-block;
-  padding: 0.3rem 0.8rem;
+  padding: 0.25rem 0.75rem;
   background-color: var(--global-theme-color);
   color: white;
   text-decoration: none;
   border-radius: 3px;
   font-size: 0.85rem;
-  transition: opacity 0.2s;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 .paper-link-btn:hover {
-  opacity: 0.8;
+  opacity: 0.85;
   color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -163,7 +181,20 @@ nav_order: 2
   
   .paper-image {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
+  }
+  
+  .paper-title {
+    font-size: 0.95rem;
+  }
+  
+  .paper-authors {
+    font-size: 0.9rem;
+  }
+  
+  .abstract-content {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
   }
 }
 </style>

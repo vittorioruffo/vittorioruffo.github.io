@@ -62,7 +62,7 @@ Example:
 
 ## Preview
 
-Run `bundle exec jekyll serve` and visit `http://localhost:4000/publications/`
+Run `bundle exec jekyll serve` and visit `http://localhost:4000/research/`
 
 ## Support
 
