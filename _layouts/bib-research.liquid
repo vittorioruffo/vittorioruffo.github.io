@@ -4,11 +4,11 @@
 <div class="research-paper">
   <div class="paper-content">
     {% if entry.preview %}
-    <div class="paper-image">
+    <div class="paper-image" id="img-container-{{ entry.key }}">
       {% if entry.preview contains '://' %}
-        <img src="{{ entry.preview }}" alt="{{ entry.title }}">
+        <img src="{{ entry.preview }}" alt="{{ entry.title }}" onerror="document.getElementById('img-container-{{ entry.key }}').style.display='none';">
       {% else %}
-        <img src="{{ entry.preview | prepend: '/assets/img/research/' }}" alt="{{ entry.title }}">
+        <img src="{{ entry.preview | prepend: '/assets/img/research/' }}" alt="{{ entry.title }}" onerror="document.getElementById('img-container-{{ entry.key }}').style.display='none';">
       {% endif %}
     </div>
     {% endif %}
