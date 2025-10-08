@@ -46,6 +46,7 @@ Add these custom fields to your BibTeX entries in `_bibliography/papers.bib`:
   award_name={Short Award Name},  % Shows on the badge
   
   % Links
+  ssrn={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1234567},  % SSRN link
   pdf={paper.pdf},           % Place PDF in assets/pdf/
   slides={slides.pdf},       % Place slides in assets/pdf/
   code={https://github.com/yourrepo},  % External URL
@@ -80,6 +81,7 @@ Here's a complete example:
   paper_number={1},
   preview={paper1.png},
   conferences={},
+  ssrn={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4853747},
   pdf={factor_dispersions.pdf},
   slides={factor_dispersions_slides.pdf}
 }
@@ -180,7 +182,7 @@ The page automatically hides sections when they are empty:
 - **Empty Abstracts** - If `abstract={}` is empty, the entire abstract section (including toggle) is hidden
 - **Empty Conferences** - If `conferences={}` is empty, the "Selected Conferences:" section is hidden
 - **No Award** - If `award` is not set, the award badge is hidden
-- **No Links** - PDF/Slides/Code buttons only appear if those fields are set
+- **No Links** - SSRN/PDF/Slides/Code buttons only appear if those fields are set
 - **No Audio** - Audio player only appears if `audio` field is set
 
 This keeps your page clean - only showing relevant information for each paper.
