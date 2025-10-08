@@ -1,6 +1,7 @@
 # Website Restructuring Summary
 
 ## Overview
+
 The website has been successfully restructured based on Vittorio Maria Ruffo's CV and following the design principles of academic portfolio websites similar to https://turalkarimli.github.io/.
 
 ## Key Changes Made
@@ -8,6 +9,7 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
 ### 1. Personal Information Updates
 
 #### `_config.yml`
+
 - Updated name: Vittorio Maria Ruffo
 - Updated description for PhD student in Finance at Frankfurt School
 - Changed keywords to: finance, asset pricing, volatility, machine learning, PhD, research
@@ -15,6 +17,7 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
 - Updated icon to 📊
 
 #### `_data/socials.yml`
+
 - Email: v.ruffo@fs.de
 - LinkedIn: vittoriomariaruffo
 - Removed demo social media links
@@ -22,6 +25,7 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
 ### 2. CV and Academic Information
 
 #### `_data/cv.yml`
+
 - **Education**: PhD at Frankfurt School, Masters from Collegio Carlo Alberto and University of Verona, Bachelor from University of Verona
 - **Working Papers**: Factor Dispersions (with CBOE Research Grant award)
 - **Work in Progress**: 2 additional research projects
@@ -31,6 +35,7 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
 - **Computer Skills**: Advanced in Python, Matlab, LaTeX; Good in R, Stata; Basic in Java, VBA, SQL
 
 #### `_pages/cv.md`
+
 - Linked to the actual CV PDF: `CV_VittorioRuffo.pdf`
 - PDF copied from `_data/` to `assets/pdf/` directory
 - Updated navigation order to 3
@@ -38,6 +43,7 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
 ### 3. Research Publications
 
 #### `_bibliography/papers.bib`
+
 - Added working paper: "Factor Dispersions" with coauthors (D. Gerchik, L. Schoenleber, G. Vilkov)
 - Included CBOE Research Grant award information
 - Added work in progress papers:
@@ -45,10 +51,12 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
   - "Firm-level News Networks"
 
 #### `_data/coauthors.yml`
+
 - Updated with Vittorio's actual coauthors
 - Added Prof. Grigory Vilkov's profile link
 
 #### `_data/venues.yml`
+
 - Updated with finance-relevant venues (JF, JFE, RFS)
 - Added colors for Working Paper and Work in Progress categories
 
@@ -68,12 +76,14 @@ The website has been successfully restructured based on Vittorio Maria Ruffo's C
 Organized by institution:
 
 **Frankfurt School of Finance & Management**
+
 - Lecturer: Corporate Finance (2026), Python Bootcamp (2025-present)
 - TA: Financial Products & Modelling, Corporate Finance (2024-present)
 - TA: Portfolio Management (2023)
 - RA: Quantitative Asset Management (2024)
 
 **University of Verona**
+
 - Teacher: Data Analysis Laboratory with R (2022)
 - TA: Financial Econometrics, Statistics, Business Management (2020-2021)
 
@@ -86,12 +96,14 @@ Organized by institution:
 ### 7. Navigation Structure
 
 The navigation bar now displays (in order):
+
 1. **about** (homepage at `/`)
 2. **research** (nav_order: 2)
 3. **cv** (nav_order: 3)
 4. **teaching** (nav_order: 4)
 
 Hidden from navigation:
+
 - blog (disabled, all posts excluded)
 - projects (disabled, all projects excluded)
 - repositories (disabled)
@@ -102,6 +114,7 @@ Hidden from navigation:
 ### 8. Content Cleanup
 
 Following best practices from `CUSTOMIZE.md`, the following demo content was excluded in `_config.yml` rather than deleted:
+
 - `_posts/` (all blog posts)
 - `_news/` (all news items)
 - `_projects/` (all project demos)
@@ -134,6 +147,7 @@ The website references `prof_pic.jpg` in the `assets/img/` directory. A default 
 ## File Structure
 
 Key files modified:
+
 ```
 /_config.yml                    # Main configuration
 /_data/
@@ -155,6 +169,7 @@ Key files modified:
 ## Testing
 
 To test the website locally:
+
 ```bash
 docker compose up
 ```
