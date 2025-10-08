@@ -1,9 +1,17 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"Working Paper":
+  color: "#4285F4"
+
+"Work in Progress":
+  color: "#808080"
+
+"JF":
+  url: https://onlinelibrary.wiley.com/journal/15406261
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
-
-"Vision":
+"JFE":
+  url: https://www.journals.elsevier.com/journal-of-financial-economics
   color: "#009f36"
+
+"RFS":
+  url: https://academic.oup.com/rfs
+  color: "#8B0000"

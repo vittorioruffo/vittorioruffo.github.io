@@ -2,11 +2,31 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Teaching and academic experience.
 nav: true
-nav_order: 6
+nav_order: 4
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Frankfurt School of Finance & Management
 
-Organize your courses by years, topics, or universities, however you like!
+### Lecturer
+- **Corporate Finance** (Bachelor level) - 2026
+- **Python Bootcamp** (Master level) - 2025-present
+
+### Teaching Assistant
+- **Financial Products & Modelling** (Master level, Prof. Grigory Vilkov) - 2024-present
+- **Corporate Finance** (Bachelor level, Prof. Larissa Schaefer and Prof. Yigitcan Karabulut) - 2024-present
+- **Portfolio Management** (Master level, Prof. Paula Cocoma) - 2023
+
+### Research Assistant
+- **Quantitative Asset Management** (Prof. Francesco Sangiorgi) - 2024
+
+---
+
+## University of Verona
+
+### Teaching Experience
+- **Data Analysis Laboratory with R** - 2022
+- **Financial Econometrics** (Master level, Prof. Alessandro Bucciol) - 2021
+- **Statistics** (Bachelor level, Prof. Marco Minozzo) - 2021
+- **Business Management** (Bachelor level, Prof. Elena Giaretta and Prof. Angelo Bonfanti) - 2020-2021
