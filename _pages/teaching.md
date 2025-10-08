@@ -4,6 +4,7 @@ permalink: /teaching/
 title: teaching
 nav: true
 nav_order: 4
+hero_image: /assets/img/hero/mountains_1.jpg
 ---
 
 ## Frankfurt School of Finance & Management
