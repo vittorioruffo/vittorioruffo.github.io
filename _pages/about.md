@@ -23,4 +23,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Welcome! I am a PhD student in Finance at Frankfurt School of Finance & Management.
+Welcome to my webpage! I am a PhD candidate in Finance at the Frankfurt School of Finance & Management.
+
+My research focuses on news and textual data, firm networks, volatility, and asset pricing. I am interested in how information flows through economic, technological, and geopolitical channels.
+
+I hold an MSc in Finance from the Collegio Carlo Alberto, as well as an MSc in Quantitative Finance and a BSc in Economics and Business from the University of Verona.
+
+You can contact me at **[v.ruffo@fs.de](mailto:v.ruffo@fs.de)** or connect with me on **[LinkedIn](https://www.linkedin.com/in/vittoriomariaruffo/)**.
