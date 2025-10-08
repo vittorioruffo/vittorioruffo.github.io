@@ -1,0 +1,133 @@
+---
+---
+<!-- Research Paper Layout - Custom Bibliography Style -->
+<div class="research-paper">
+  <div class="paper-content">
+    {% if entry.preview %}
+    <div class="paper-image">
+      {% if entry.preview contains '://' %}
+        <img src="{{ entry.preview }}" alt="{{ entry.title }}">
+      {% else %}
+        <img src="{{ entry.preview | prepend: '/assets/img/research/' }}" alt="{{ entry.title }}">
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    <div class="paper-details">
+      <div class="paper-title">
+        [{{ entry.paper_number | default: '?' }}] <strong>{{ entry.title }}</strong>
+      </div>
+      
+      {% comment %} Display coauthors {% endcomment %}
+      {% assign coauthor_list = "" | split: "" %}
+      {%- for author in entry.author_array -%}
+        {% assign author_is_self = false %}
+        {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+        {% if site.scholar.last_name contains author_last_name %}
+          {% if site.scholar.first_name contains author.first %}
+            {% assign author_is_self = true %}
+          {% endif %}
+        {%- endif -%}
+        {% unless author_is_self %}
+          {% assign coauthor_list = coauthor_list | push: author %}
+        {% endunless %}
+      {% endfor %}
+
+      {% assign coauthor_count = coauthor_list | size %}
+      {% if coauthor_count > 0 %}
+        <div class="paper-authors">
+          with 
+          {%- for author in coauthor_list -%}
+            {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+            {% assign coauthor_url = null %}
+            {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
+            {% if site.data.coauthors[clean_last_name] %}
+              {%- for coauthor in site.data.coauthors[clean_last_name] -%}
+                {% if coauthor.firstname contains author.first %}
+                  {%- assign coauthor_url = coauthor.url -%}
+                  {% break %}
+                {%- endif -%}
+              {% endfor %}
+            {%- endif -%}
+
+            {%- if forloop.length > 1 -%}
+              {% if forloop.first == false -%}
+                {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
+              {%- endif %}
+              {%- if forloop.last %}and {% endif -%}
+            {% endif %}
+            
+            {%- if coauthor_url -%}
+              <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>
+            {%- else -%}
+              {{ author.first }} {{ author.last }}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {% if entry.abstract %}
+      <div class="abstract-section">
+        <div class="abstract-toggle" onclick="toggleAbstract('{{ entry.key }}')">Abstract ▼</div>
+        <div id="{{ entry.key }}" class="abstract-content">
+          {{ entry.abstract }}
+        </div>
+      </div>
+      {% endif %}
+      
+      <div class="paper-meta">
+        {% if entry.award %}
+        <div style="margin-top: 0.5rem;">
+          <span class="award">{{ entry.award_name | default: entry.award }}</span>
+        </div>
+        {% endif %}
+        
+        {% if entry.conferences %}
+        <div class="conferences">
+          Selected Conferences: 
+          {% assign conf_list = entry.conferences | split: ';' %}
+          {% for conf in conf_list %}
+            <span class="conference-tag">{{ conf | strip }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        
+        {% if entry.links or entry.pdf or entry.slides or entry.code %}
+        <div class="paper-links" style="margin-top: 0.5rem;">
+          {% if entry.pdf %}
+            {% if entry.pdf contains '://' %}
+              <a href="{{ entry.pdf }}" class="paper-link-btn">PDF</a>
+            {% else %}
+              <a href="{{ entry.pdf | prepend: '/assets/pdf/' }}" class="paper-link-btn">PDF</a>
+            {% endif %}
+          {% endif %}
+          {% if entry.slides %}
+            {% if entry.slides contains '://' %}
+              <a href="{{ entry.slides }}" class="paper-link-btn">Slides</a>
+            {% else %}
+              <a href="{{ entry.slides | prepend: '/assets/pdf/' }}" class="paper-link-btn">Slides</a>
+            {% endif %}
+          {% endif %}
+          {% if entry.code %}
+            <a href="{{ entry.code }}" class="paper-link-btn">Code</a>
+          {% endif %}
+        </div>
+        {% endif %}
+        
+        {% if entry.audio %}
+        <div class="audio-summary">
+          Listen to NotebookLM generated podcast-style summary:
+          <audio controls style="width: 100%; margin-top: 0.5rem;">
+            {% if entry.audio contains '://' %}
+              <source src="{{ entry.audio }}" type="audio/mpeg">
+            {% else %}
+              <source src="{{ entry.audio | prepend: '/assets/audio/' }}" type="audio/mpeg">
+            {% endif %}
+          </audio>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+

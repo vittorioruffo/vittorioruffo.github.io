@@ -37,18 +37,6 @@
         - Supervisor&#58; Prof. Elena Giaretta
         - Thesis in Business Management&#58; "Tourism between sustainability and innovation&#58; the 'Glamping' phenomenon"
 
-- title: Working Papers
-  type: list
-  contents:
-    - <b>Factor Dispersions</b>, with D. Gerchik, L. Schoenleber, and G. Vilkov, 2024
-    - Winner of the CBOE-The Options Institute-S&P Dow Jones Indices Dispersion Research Grant
-
-- title: Work in Progress
-  type: list
-  contents:
-    - <b>Market Efficiency in Prediction Markets - A Comparison with Derivatives</b>, with M. Fabi, R. Marfè and L. Schoenleber
-    - <b>Firm-level News Networks</b>, with C. Dim and G. Vilkov
-
 - title: Presentations
   type: time_table
   contents:
@@ -95,26 +83,3 @@
     - title: TA in Business Management (Bachelor, Prof. Elena Giaretta and Prof. Angelo Bonfanti)
       institution: University of Verona
       year: 2020 - 2021
-
-- title: Scholarships
-  type: time_table
-  contents:
-    - year: 2022
-      items:
-        - Doctoral Scholarship, Frankfurt School of Finance & Management
-    - year: 2021
-      items:
-        - Merit based full tuition waiver, Collegio Carlo Alberto
-
-- title: Computer Skills
-  type: nested_list
-  contents:
-    - title: Advanced knowledge
-      items:
-        - Python, Matlab, LaTeX, Adobe Lightroom, Adobe Photoshop, Phase One Capture One
-    - title: Good knowledge
-      items:
-        - R, Stata
-    - title: Basic knowledge
-      items:
-        - Java, VBA, SQL
