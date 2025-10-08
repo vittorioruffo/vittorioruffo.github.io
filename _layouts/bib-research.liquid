@@ -36,8 +36,7 @@
       {% assign coauthor_count = coauthor_list | size %}
       {% if coauthor_count > 0 %}
         <div class="paper-authors">
-          with 
-          {%- for author in coauthor_list -%}
+          with {% for author in coauthor_list -%}
             {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
             {% assign coauthor_url = null %}
             {%- assign clean_last_name = author_last_name | downcase | remove_accents -%}
