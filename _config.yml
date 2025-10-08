@@ -7,7 +7,7 @@ first_name: Vittorio
 middle_name: Maria
 last_name: Ruffo
 contact_note: >
-  Feel free to reach out via email or connect with me on LinkedIn.
+
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Vittorio Maria Ruffo, PhD student in Finance at Frankfurt School of Finance & Management.
 footer_text: >
@@ -46,7 +46,7 @@ repo_trophies:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
