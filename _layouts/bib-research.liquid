@@ -15,7 +15,7 @@
     
     <div class="paper-details">
       <div class="paper-title">
-        [{{ entry.paper_number | default: '?' }}] <strong>{{ entry.title }}</strong>
+        <strong>{{ entry.title }}</strong>
       </div>
       
       {% comment %} Display coauthors {% endcomment %}
@@ -100,24 +100,27 @@
         </div>
         {% endif %}
         
-        {% if entry.links or entry.pdf or entry.slides or entry.code %}
+        {% if entry.links or entry.pdf or entry.slides or entry.code or entry.ssrn %}
         <div class="paper-links" style="margin-top: 0.5rem;">
+          {% if entry.ssrn %}
+            <a href="{{ entry.ssrn }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">SSRN</a>
+          {% endif %}
           {% if entry.pdf %}
             {% if entry.pdf contains '://' %}
-              <a href="{{ entry.pdf }}" class="paper-link-btn">PDF</a>
+              <a href="{{ entry.pdf }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">PDF</a>
             {% else %}
               <a href="{{ entry.pdf | prepend: '/assets/pdf/' }}" class="paper-link-btn">PDF</a>
             {% endif %}
           {% endif %}
           {% if entry.slides %}
             {% if entry.slides contains '://' %}
-              <a href="{{ entry.slides }}" class="paper-link-btn">Slides</a>
+              <a href="{{ entry.slides }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">Slides</a>
             {% else %}
               <a href="{{ entry.slides | prepend: '/assets/pdf/' }}" class="paper-link-btn">Slides</a>
             {% endif %}
           {% endif %}
           {% if entry.code %}
-            <a href="{{ entry.code }}" class="paper-link-btn">Code</a>
+            <a href="{{ entry.code }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">Code</a>
           {% endif %}
         </div>
         {% endif %}

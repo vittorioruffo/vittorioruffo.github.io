@@ -2,12 +2,23 @@
 layout: page
 permalink: /research/
 title: research
-description: Working papers and research in progress.
+description: 
 nav: true
 nav_order: 2
 ---
 
+<div class="hide-page-header"></div>
+
 <style>
+/* Hide the page title and description */
+.page-header {
+  display: none;
+}
+
+header.post-header {
+  display: none;
+}
+
 .research-container {
   max-width: 100%;
   margin: 0 auto;
@@ -24,6 +35,7 @@ nav_order: 2
 
 .paper-content {
   display: flex;
+  flex-direction: row-reverse;
   gap: 2rem;
   align-items: flex-start;
   margin-bottom: 0.5rem;
@@ -176,12 +188,13 @@ nav_order: 2
 
 @media (max-width: 768px) {
   .paper-content {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
   
   .paper-image {
     width: 100%;
     max-width: 250px;
+    margin: 0 auto;
   }
   
   .paper-title {

@@ -1,23 +1,23 @@
 "vilkov":
   - firstname: ["Grigory", "G."]
-    url: https://www.frankfurt-school.de/home/research/faculty/gvilkov
+    url: https://www.vilkov.net/
 
 "gerchik":
-  - firstname: ["D."]
+  - firstname: ["Daniil", "D."]
     url: #
 
 "schoenleber":
-  - firstname: ["L."]
-    url: #
+  - firstname: ["Lorenzo", "L."]
+    url: https://sites.google.com/view/lorenzo-schoenleber
 
 "fabi":
-  - firstname: ["M."]
-    url: #
+  - firstname: ["Michele", "M."]
+    url: https://michelefabi.com/
 
-"marfè":
-  - firstname: ["R."]
-    url: #
-
+"marfe":
+  - firstname: ["Roberto", "R."]
+    url: http://robertomarfe.altervista.org/
+  
 "dim":
-  - firstname: ["C."]
-    url: #
+  - firstname: ["Chukwuma", "C."]
+    url: https://sites.google.com/view/chukwumadim
