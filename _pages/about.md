@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD Student in Finance at <a href='https://www.frankfurt-school.de'>Frankfurt School of Finance & Management</a>
+subtitle:
 
 profile:
   align: right
