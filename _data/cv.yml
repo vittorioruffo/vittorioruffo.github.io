@@ -2,96 +2,119 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Vittorio Maria Ruffo
+    - name: Email
+      value: v.ruffo@fs.de
     - name: Languages
-      value: English, German
+      value: Italian (Native), English (Fluent)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: PhD in Finance and Master in Business Research and Analytics
+      institution: Frankfurt School of Finance & Management, Frankfurt, Germany
+      year: 2022 - present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+        - Main research interests&#58; asset pricing, volatility, machine learning
+        - Advisor&#58; Prof. Grigory Vilkov
+    - title: Second Level Specializing Master in Finance, Insurance and Risk Management
+      institution: Collegio Carlo Alberto and University of Turin, Turin, Italy
+      year: 2021 - 2022
       description:
-        - Description 1.
-        - Description 2.
-
-- title: Experience
-  type: time_table
-  contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+        - Merit based full tuition waiver
+    - title: Master in Banking and Finance - Quantitative Finance Track
+      institution: University of Verona, Verona, Italy
+      year: 2019 - 2021
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Final Grade&#58; 110/110 with honours
+        - Supervisor&#58; Prof. Alessandro Bucciol
+        - Thesis in Econometrics&#58; "Personality and investment choices&#58; an analysis on Australian panel data"
+    - title: Bachelor in Economics and Business
+      institution: University of Verona, Verona, Italy
+      year: 2016 - 2019
       description:
-        - Description 1.
-        - Description 2.
+        - Final Grade&#58; 110/110 with honours
+        - Supervisor&#58; Prof. Elena Giaretta
+        - Thesis in Business Management&#58; "Tourism between sustainability and innovation&#58; the 'Glamping' phenomenon"
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Working Papers
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <b>Factor Dispersions</b>, with D. Gerchik, L. Schoenleber, and G. Vilkov, 2024
+    - Winner of the CBOE-The Options Institute-S&P Dow Jones Indices Dispersion Research Grant
+
+- title: Work in Progress
+  type: list
+  contents:
+    - <b>Market Efficiency in Prediction Markets - A Comparison with Derivatives</b>, with M. Fabi, R. Marfè and L. Schoenleber
+    - <b>Firm-level News Networks</b>, with C. Dim and G. Vilkov
+
+- title: Presentations
+  type: time_table
+  contents:
+    - year: July 2025
+      items:
+        - Second Liverpool Workshop in Option Markets, Liverpool, UK
+    - year: November 2024
+      items:
+        - 2024 FMA Conference on Derivatives and Volatility, Chicago, USA
+    - year: May 2024
+      items:
+        - Bonn-Frankfurt-Mannheim PhD Conference 2024, Bonn, Germany
+
+- title: Teaching and Work Experience
+  type: time_table
+  contents:
+    - title: Lecturer, Corporate Finance (Bachelor)
+      institution: Frankfurt School of Finance & Management
+      year: 2026
+    - title: Lecturer, Python Bootcamp (Master)
+      institution: Frankfurt School of Finance & Management
+      year: 2025 - present
+    - title: TA in Financial Products & Modelling (Master, Prof. Grigory Vilkov)
+      institution: Frankfurt School of Finance & Management
+      year: 2024 - present
+    - title: TA in Corporate Finance (Bachelor, Prof. Larissa Schaefer and Prof. Yigitcan Karabulut)
+      institution: Frankfurt School of Finance & Management
+      year: 2024 - present
+    - title: RA for Quantitative Asset Management, Prof. Francesco Sangiorgi
+      institution: Frankfurt School of Finance & Management
+      year: 2024
+    - title: TA in Portfolio Management (Master, Prof. Paula Cocoma)
+      institution: Frankfurt School of Finance & Management
+      year: 2023
+    - title: Teacher, Data Analysis Laboratory with R
+      institution: University of Verona
+      year: 2022
+    - title: TA in Financial Econometrics (Master, Prof. Alessandro Bucciol)
+      institution: University of Verona
+      year: 2021
+    - title: TA in Statistics (Bachelor, Prof. Marco Minozzo)
+      institution: University of Verona
+      year: 2021
+    - title: TA in Business Management (Bachelor, Prof. Elena Giaretta and Prof. Angelo Bonfanti)
+      institution: University of Verona
+      year: 2020 - 2021
+
+- title: Scholarships
+  type: time_table
+  contents:
+    - year: 2022
+      items:
+        - Doctoral Scholarship, Frankfurt School of Finance & Management
+    - year: 2021
+      items:
+        - Merit based full tuition waiver, Collegio Carlo Alberto
+
+- title: Computer Skills
+  type: nested_list
+  contents:
+    - title: Advanced knowledge
+      items:
+        - Python, Matlab, LaTeX, Adobe Lightroom, Adobe Photoshop, Phase One Capture One
+    - title: Good knowledge
+      items:
+        - R, Stata
+    - title: Basic knowledge
+      items:
+        - Java, VBA, SQL
