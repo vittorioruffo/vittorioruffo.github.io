@@ -37,12 +37,20 @@ layout: page
 title: teaching
 description: Inspiring the next generation of finance professionals  # Optional subtitle
 hero_image: /assets/img/hero/teaching-mountain.jpg
+hero_text_color: dark  # Optional: use 'dark' for bright images, omit for dark/medium images
 nav: true
 nav_order: 4
 ---
 ```
 
 **That's it!** The hero section will automatically appear.
+
+#### Text Color Options:
+
+- **White text (default)**: Best for dark or medium-toned mountain photos. Don't add `hero_text_color`.
+- **Dark text**: Best for bright/snowy/light mountain photos. Add `hero_text_color: dark`.
+
+The text color adapts to **your image**, not the theme, so it's always readable!
 
 ## 📄 Suggested Pages for Heroes
 
