@@ -37,16 +37,14 @@ body {
 
   .hero-background {
     position: absolute;
-    top: -50px; // Extra height for parallax effect
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% + 100px); // Extended height for smooth parallax
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; // Parallax effect - image stays fixed while content scrolls
     z-index: 1;
-    will-change: transform; // Performance optimization for parallax
   }
 
   .hero-overlay {
@@ -150,7 +148,6 @@ body:not(.fixed-top-nav) .hero-section {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   opacity: 0.4; //
   z-index: -1;
   pointer-events: none;
@@ -174,10 +171,6 @@ html[data-theme="dark"] {
   .hero-section {
     height: 350px; // Proportionally shorter on tablets
     margin-bottom: -100px; // Less overlap on tablets
-
-    .hero-background {
-      background-attachment: scroll; // Disable parallax on mobile for better performance
-    }
 
     &::after {
       height: 180px; // Proportional fade on tablets
@@ -203,12 +196,6 @@ html[data-theme="dark"] {
   .hero-section {
     height: 280px; // Proportionally shorter on mobile
     margin-bottom: -80px; // Less overlap on mobile
-
-    .hero-background {
-      background-attachment: scroll; // Disable parallax on mobile for better performance
-      top: 0;
-      height: 100%;
-    }
 
     &::after {
       height: 150px; // Proportional fade on mobile
