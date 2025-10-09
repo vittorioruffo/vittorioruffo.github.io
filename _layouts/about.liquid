@@ -1,7 +1,11 @@
 ---
 layout: default
 ---
-<div class="post">
+{% if page.hero_image %}
+  <div class="about-hero-background" style="background-image: url('{{ page.hero_image | relative_url }}');"></div>
+{% endif %}
+
+<div class="post{% if page.hero_image %} has-hero-bg{% endif %}">
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}

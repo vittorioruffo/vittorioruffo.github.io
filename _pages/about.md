@@ -3,6 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle:
+hero_image: /assets/img/hero/mountains_1.jpg  # Subtle background - change to your preferred photo
 
 profile:
   align: right

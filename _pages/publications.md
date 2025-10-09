@@ -5,20 +5,10 @@ title: research
 description: 
 nav: true
 nav_order: 2
+hero_image: /assets/img/hero/mountains_2.jpg
 ---
 
-<div class="hide-page-header"></div>
-
 <style>
-/* Hide the page title and description */
-.page-header {
-  display: none;
-}
-
-header.post-header {
-  display: none;
-}
-
 .research-container {
   max-width: 100%;
   margin: 0 auto;

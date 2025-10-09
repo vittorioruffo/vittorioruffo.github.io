@@ -9,7 +9,7 @@ layout: default
 {% endif %}
 
 {% if page.hero_image %}
-  <div class="hero-section">
+  <div class="hero-section{% if page.hero_text_color == 'dark' %} hero-dark-text{% endif %}">
     <div class="hero-background" style="background-image: url('{{ page.hero_image | relative_url }}');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">

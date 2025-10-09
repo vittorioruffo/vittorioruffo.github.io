@@ -12,8 +12,14 @@ layout: page
 title: Your Page Title
 description: Optional subtitle
 hero_image: /assets/img/hero/your-mountain-photo.jpg
+hero_text_color: dark  # Optional: use 'dark' for bright images, omit for dark images (default is white text)
 ---
 ```
+
+### Text Color Options
+
+- **Default (white text)**: Best for dark or medium-toned images. Don't add `hero_text_color` field.
+- **Dark text**: Best for bright/light images. Add `hero_text_color: dark` to your front matter.
 
 ## Recommended Specifications
 

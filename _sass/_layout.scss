@@ -24,15 +24,16 @@ body {
 .hero-section {
   position: relative;
   width: 100vw; // Full viewport width
-  height: 300px; // Shorter, more subtle height
+  height: 450px; // Taller for more gradual fade
   margin-top: -56px; // Offset fixed nav height
-  margin-bottom: 2rem;
+  margin-bottom: -150px; // More overlap to let fade reach the text
   margin-left: 50%; // Break out of container
   transform: translateX(-50%); // Center it
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start; // Align content to top instead of center
   justify-content: center;
+  padding-top: 80px; // Push text down a bit from the very top
 
   .hero-background {
     position: absolute;
@@ -57,17 +58,35 @@ body {
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.4) 30%,
       rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.65) 100%
     );
     z-index: 2;
   }
 
+  // Fade-out mask at the bottom for smooth transition to content
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px; // Taller, more stretched fade effect
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--global-bg-color) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+  }
+
   .hero-content {
     position: relative;
-    z-index: 3;
+    z-index: 4; // Above the fade-out mask
     text-align: center;
-    color: $white-color;
+    color: #ffffff !important; // Fixed white text - never changes with theme
     padding: 2rem;
     max-width: 800px;
 
@@ -75,13 +94,32 @@ body {
       font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      color: #ffffff !important; // Fixed white
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); // Dark shadow for white text
     }
 
     .hero-description {
       font-size: 1.25rem;
       font-weight: 300;
+      color: #ffffff !important; // Fixed white
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+// Dark text variant for light/bright hero images
+.hero-section.hero-dark-text {
+  .hero-content {
+    color: #000000 !important; // Fixed black text - never changes with theme
+
+    .hero-title {
+      color: #000000 !important; // Fixed black
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8); // Light shadow for dark text
+    }
+
+    .hero-description {
+      color: #000000 !important; // Fixed black
+      text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
     }
   }
 }
@@ -91,13 +129,58 @@ body:not(.fixed-top-nav) .hero-section {
   margin-top: 0;
 }
 
+// Add padding to content when there's a hero to account for overlap
+.hero-section + .post {
+  padding-top: 80px; // Creates space for the stretched fade to overlap nicely
+  position: relative;
+  z-index: 1;
+}
+
+/******************************************************************************
+ * About Page Background Hero
+ ******************************************************************************/
+
+// Full-page background hero for about page (no title, content on top)
+.about-hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.4; //
+  z-index: -1;
+  pointer-events: none;
+}
+
+// Make content more readable when there's a background hero
+.post.has-hero-bg {
+  position: relative;
+  z-index: 1;
+}
+
+// Dark mode adjustments
+html[data-theme="dark"] {
+  .about-hero-background {
+    opacity: 0.3; // Even more subtle in dark mode
+  }
+}
+
 // Responsive adjustments
 @media (max-width: 768px) {
   .hero-section {
-    height: 250px; // Shorter on tablets
+    height: 350px; // Proportionally shorter on tablets
+    margin-bottom: -100px; // Less overlap on tablets
 
     .hero-background {
       background-attachment: scroll; // Disable parallax on mobile for better performance
+    }
+
+    &::after {
+      height: 180px; // Proportional fade on tablets
     }
 
     .hero-content {
@@ -110,16 +193,25 @@ body:not(.fixed-top-nav) .hero-section {
       }
     }
   }
+
+  .hero-section + .post {
+    padding-top: 120px; // Adjust spacing for tablets
+  }
 }
 
 @media (max-width: 576px) {
   .hero-section {
-    height: 200px; // Even shorter on mobile
+    height: 280px; // Proportionally shorter on mobile
+    margin-bottom: -80px; // Less overlap on mobile
 
     .hero-background {
       background-attachment: scroll; // Disable parallax on mobile for better performance
       top: 0;
       height: 100%;
+    }
+
+    &::after {
+      height: 150px; // Proportional fade on mobile
     }
 
     .hero-content {
@@ -133,6 +225,10 @@ body:not(.fixed-top-nav) .hero-section {
         font-size: 0.9rem;
       }
     }
+  }
+
+  .hero-section + .post {
+    padding-top: 100px; // Adjust spacing for mobile
   }
 }
 
