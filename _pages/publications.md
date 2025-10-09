@@ -123,7 +123,7 @@ hero_image: /assets/img/hero/mountains_2.jpg
 
 .conference-tag {
   display: inline-block;
-  background-color: var(--global-theme-color);
+  position: relative;
   color: white;
   padding: 0.15rem 0.5rem;
   margin: 0.15rem 0.15rem 0.15rem 0;
@@ -131,6 +131,19 @@ hero_image: /assets/img/hero/mountains_2.jpg
   font-size: 0.8rem;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 500;
+}
+
+.conference-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--global-theme-color);
+  opacity: 0.7;
+  border-radius: 2px;
+  z-index: -1;
 }
 
 .award {
