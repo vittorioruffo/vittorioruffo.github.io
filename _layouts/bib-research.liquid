@@ -84,18 +84,20 @@
         </div>
         {% endif %}
         
-        {% comment %} Only show conferences if field exists and is not empty {% endcomment %}
+        {% comment %} Only show presentations if field exists and is not empty {% endcomment %}
         {% assign conferences_trimmed = entry.conferences | strip %}
         {% if conferences_trimmed != "" %}
-        <div class="conferences">
-          Selected Conferences: 
+        <div class="presentations">
+          <div class="presentations-label">Presentations:</div>
+          <ul class="presentation-list">
           {% assign conf_list = entry.conferences | split: ';' %}
           {% for conf in conf_list %}
             {% assign conf_trimmed = conf | strip %}
             {% if conf_trimmed != "" %}
-              <span class="conference-tag">{{ conf_trimmed }}</span>
+              <li>{{ conf_trimmed }}</li>
             {% endif %}
           {% endfor %}
+          </ul>
         </div>
         {% endif %}
         

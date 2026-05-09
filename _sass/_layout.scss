@@ -6,6 +6,8 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
 
   h1,
   h2,
@@ -24,23 +26,24 @@ body {
 .hero-section {
   position: relative;
   width: 100vw; // Full viewport width
-  height: 450px; // Taller for more gradual fade
+  height: auto;
+  min-height: 220px;
   margin-top: -56px; // Offset fixed nav height
-  margin-bottom: -150px; // More overlap to let fade reach the text
+  margin-bottom: 2rem;
   margin-left: 50%; // Break out of container
   transform: translateX(-50%); // Center it
   overflow: hidden;
   display: flex;
-  align-items: flex-start; // Align content to top instead of center
+  align-items: flex-end;
   justify-content: center;
-  padding-top: 80px; // Push text down a bit from the very top
+  padding: 5.5rem 1rem 2rem;
+  background: $black-bg-color;
+  border-bottom: 1px solid var(--global-divider-color);
 
   .hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    display: block;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,75 +52,65 @@ body {
 
   .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.4) 30%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.65) 100%
-    );
+    inset: 0;
+    display: block;
+    background:
+      linear-gradient(90deg, rgba(7, 9, 13, 0.84) 0%, rgba(7, 9, 13, 0.62) 48%, rgba(7, 9, 13, 0.34) 100%),
+      rgba(11, 47, 91, 0.24);
     z-index: 2;
   }
 
-  // Fade-out mask at the bottom for smooth transition to content
   &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 250px; // Taller, more stretched fade effect
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--global-bg-color) 100%
-    );
-    z-index: 3;
-    pointer-events: none;
+    display: none;
   }
 
   .hero-content {
     position: relative;
-    z-index: 4; // Above the fade-out mask
-    text-align: center;
-    color: #ffffff !important; // Fixed white text - never changes with theme
-    padding: 2rem;
-    max-width: 800px;
+    z-index: 3;
+    width: 100%;
+    max-width: $max-content-width;
+    padding: 0;
+    text-align: left;
+    color: #ffffff !important;
 
     .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #ffffff !important; // Fixed white
-      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); // Dark shadow for white text
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-bottom: 0;
+      color: #ffffff !important;
+      text-shadow: none;
     }
 
     .hero-description {
-      font-size: 1.25rem;
-      font-weight: 300;
-      color: #ffffff !important; // Fixed white
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 0.4rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.82) !important;
+      text-shadow: none;
     }
   }
 }
 
 // Dark text variant for light/bright hero images
 .hero-section.hero-dark-text {
+  .hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.68) 50%, rgba(255, 255, 255, 0.26) 100%),
+      rgba(255, 255, 255, 0.2);
+  }
+
   .hero-content {
-    color: #000000 !important; // Fixed black text - never changes with theme
+    color: #000000 !important;
 
     .hero-title {
-      color: #000000 !important; // Fixed black
-      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.8); // Light shadow for dark text
+      color: #000000 !important;
+      text-shadow: none;
     }
 
     .hero-description {
-      color: #000000 !important; // Fixed black
-      text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+      color: rgba(0, 0, 0, 0.72) !important;
+      text-shadow: none;
     }
   }
 }
@@ -129,7 +122,7 @@ body:not(.fixed-top-nav) .hero-section {
 
 // Add padding to content when there's a hero to account for overlap
 .hero-section + .post {
-  padding-top: 80px; // Creates space for the stretched fade to overlap nicely
+  padding-top: 0;
   position: relative;
   z-index: 1;
 }
@@ -148,7 +141,7 @@ body:not(.fixed-top-nav) .hero-section {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.4; //
+  opacity: 0.24;
   z-index: -1;
   pointer-events: none;
 }
@@ -159,26 +152,31 @@ body:not(.fixed-top-nav) .hero-section {
   z-index: 1;
 }
 
+.post.has-hero-bg .profile {
+  margin-top: -0.9rem;
+
+  img {
+    border-radius: 6px !important;
+  }
+}
+
 // Dark mode adjustments
 html[data-theme="dark"] {
   .about-hero-background {
-    opacity: 0.3; // Even more subtle in dark mode
+    opacity: 0.16;
   }
 }
 
 // Responsive adjustments
 @media (max-width: 768px) {
   .hero-section {
-    height: 350px; // Proportionally shorter on tablets
-    margin-bottom: -100px; // Less overlap on tablets
-
-    &::after {
-      height: 180px; // Proportional fade on tablets
-    }
+    min-height: 190px;
+    margin-bottom: 1.5rem;
+    padding: 5rem 1rem 1.5rem;
 
     .hero-content {
       .hero-title {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
       }
 
       .hero-description {
@@ -188,24 +186,21 @@ html[data-theme="dark"] {
   }
 
   .hero-section + .post {
-    padding-top: 120px; // Adjust spacing for tablets
+    padding-top: 0;
   }
 }
 
 @media (max-width: 576px) {
   .hero-section {
-    height: 280px; // Proportionally shorter on mobile
-    margin-bottom: -80px; // Less overlap on mobile
-
-    &::after {
-      height: 150px; // Proportional fade on mobile
-    }
+    min-height: 170px;
+    margin-bottom: 1.25rem;
+    padding: 4.75rem 1rem 1.25rem;
 
     .hero-content {
-      padding: 1rem;
+      padding: 0;
 
       .hero-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
       }
 
       .hero-description {
@@ -215,7 +210,7 @@ html[data-theme="dark"] {
   }
 
   .hero-section + .post {
-    padding-top: 100px; // Adjust spacing for mobile
+    padding-top: 0;
   }
 }
 
@@ -227,6 +222,13 @@ body.fixed-top-nav {
 body.sticky-bottom-footer {
   // Remove padding below footer.
   padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.sticky-bottom-footer > .container[role="main"] {
+  flex: 1 0 auto;
 }
 
 .container {

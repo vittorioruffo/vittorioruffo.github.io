@@ -11,6 +11,11 @@ $red-color-dark: #b71c1c !default;
 $orange-color: #f29105 !default;
 $blue-color: #0076df !default;
 $blue-color-dark: #00369f !default;
+$navy-color: #0b2f5b !default;
+$navy-color-dark-mode: #7aa2d6 !default;
+$black-bg-color: #07090d !default;
+$black-card-color: #0f131a !default;
+$black-divider-color: #263044 !default;
 $cyan-color: #2698ba !default;
 $light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
 $green-color: #00ab37 !default;
@@ -34,8 +39,8 @@ $black-color: #000000 !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
-$code-bg-color-dark: #2c3237 !default;
+$code-bg-color-light: rgba($navy-color, 0.05);
+$code-bg-color-dark: rgba($navy-color-dark-mode, 0.16) !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

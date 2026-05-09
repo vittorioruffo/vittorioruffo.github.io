@@ -94,6 +94,48 @@ div.container-pdf {
   justify-content: flex-start;
 }
 
+.cv-pdf-document {
+  margin-top: 1rem;
+}
+
+.cv-pdf-actions {
+  margin-bottom: 1rem;
+}
+
+.cv-pdf-renderer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0 1.25rem;
+  width: 100%;
+}
+
+.cv-pdf-loading {
+  color: var(--global-text-color-light);
+}
+
+.cv-rendered-page {
+  background: #ffffff;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.cv-pdf-canvas {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .cv-pdf-renderer {
+    padding: 0;
+  }
+}
+
 /*****************************
  * CV LIST_GROUPS styles
  *****************************/

@@ -26,8 +26,23 @@ latest_posts:
 
 Welcome to my webpage! I am a PhD candidate in Finance at the Frankfurt School of Finance & Management.
 
-My research focuses on news and textual data, firm networks, volatility, and asset pricing. I am interested in how information flows through economic, technological, and geopolitical channels.
+My research interests include Asset Pricing, Option-Implied information, Decentralized Finance, News and Textual Data.
 
 I hold an MSc in Finance from the Collegio Carlo Alberto, as well as an MSc in Quantitative Finance and a BSc in Economics and Business from the University of Verona.
 
 You can contact me at **[v.ruffo@fs.de](mailto:v.ruffo@fs.de)** or connect with me on **[LinkedIn](https://www.linkedin.com/in/vittoriomariaruffo/)**.
+
+<div class="site-action-row">
+  <a class="site-action-button" href="{{ '/assets/pdf/CV_VittorioRuffo.pdf' | relative_url }}" download>
+    <i class="fa-solid fa-file-arrow-down"></i>
+    Download CV
+  </a>
+  <a class="site-action-button" href="{{ '/research/' | relative_url }}">
+    <i class="fa-solid fa-book-open"></i>
+    Research
+  </a>
+  <a class="site-action-button" href="{{ '/teaching/' | relative_url }}">
+    <i class="fa-solid fa-chalkboard-user"></i>
+    Teaching
+  </a>
+</div>

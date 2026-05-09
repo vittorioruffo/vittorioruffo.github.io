@@ -14,9 +14,29 @@ hero_image: /assets/img/hero/mountains_2.jpg
   margin: 0 auto;
 }
 
+.research-container h2.bibliography {
+  border: 0;
+  color: var(--global-text-color-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  padding: 0;
+  text-align: left;
+}
+
+.research-container ol.bibliography {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.research-container ol.bibliography > li {
+  margin: 0;
+}
+
 .research-paper {
-  margin-bottom: 3.5rem;
-  padding-bottom: 2.5rem;
+  margin-bottom: 2.75rem;
+  padding-bottom: 2rem;
 }
 
 .research-paper:not(:last-child) {
@@ -26,21 +46,21 @@ hero_image: /assets/img/hero/mountains_2.jpg
 .paper-content {
   display: flex;
   flex-direction: row-reverse;
-  gap: 2rem;
+  gap: 2.25rem;
   align-items: flex-start;
   margin-bottom: 0.5rem;
 }
 
 .paper-image {
   flex-shrink: 0;
-  width: 180px;
+  width: 160px;
 }
 
 .paper-image img {
   width: 100%;
   height: auto;
-  border-radius: 3px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 4px;
 }
 
 .paper-details {
@@ -49,11 +69,11 @@ hero_image: /assets/img/hero/mountains_2.jpg
 }
 
 .paper-title {
-  font-size: 1rem;
-  font-weight: normal;
-  margin-bottom: 0.75rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
   color: var(--global-text-color);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .paper-title strong {
@@ -61,10 +81,10 @@ hero_image: /assets/img/hero/mountains_2.jpg
 }
 
 .paper-authors {
-  font-style: italic;
-  margin-bottom: 0.75rem;
+  font-style: normal;
+  margin-bottom: 0.9rem;
   color: var(--global-text-color-light);
-  font-size: 0.95rem;
+  font-size: 0.93rem;
 }
 
 .paper-authors a {
@@ -80,17 +100,17 @@ hero_image: /assets/img/hero/mountains_2.jpg
 }
 
 .abstract-section {
-  margin: 0.5rem 0;
+  margin: 0.65rem 0;
 }
 
 .abstract-toggle {
   cursor: pointer;
   color: var(--global-theme-color);
-  font-weight: 400;
+  font-weight: 500;
   user-select: none;
   display: inline-block;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 0.45rem;
+  font-size: 0.92rem;
 }
 
 .abstract-toggle:hover {
@@ -99,12 +119,13 @@ hero_image: /assets/img/hero/mountains_2.jpg
 
 .abstract-content {
   display: none;
-  margin-top: 0.75rem;
+  margin-top: 0.6rem;
   padding: 1rem 1.25rem;
-  background-color: var(--global-bg-color);
-  border-left: 3px solid var(--global-theme-color);
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
   line-height: 1.65;
-  text-align: justify;
+  text-align: left;
   font-size: 0.95rem;
 }
 
@@ -116,44 +137,34 @@ hero_image: /assets/img/hero/mountains_2.jpg
   margin-top: 0.75rem;
 }
 
-.conferences {
+.presentations {
   margin-top: 0.75rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
 }
 
-.conference-tag {
-  display: inline-block;
-  position: relative;
-  color: white;
-  padding: 0.15rem 0.5rem;
-  margin: 0.15rem 0.15rem 0.15rem 0;
-  border-radius: 2px;
-  font-size: 0.8rem;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 500;
+.presentations-label {
+  font-weight: 600;
 }
 
-.conference-tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--global-theme-color);
-  opacity: 0.7;
-  border-radius: 2px;
-  z-index: -1;
+.presentation-list {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.presentation-list li {
+  line-height: 1.45;
+  margin: 0.1rem 0;
 }
 
 .award {
   display: inline-block;
-  background-color: #d4af37;
-  color: white;
-  padding: 0.25rem 0.7rem;
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-theme-color);
+  color: var(--global-theme-color);
+  padding: 0.2rem 0.55rem;
   margin: 0.15rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
   font-weight: 500;
 }
 
@@ -171,22 +182,22 @@ hero_image: /assets/img/hero/mountains_2.jpg
 
 .paper-link-btn {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  background-color: var(--global-theme-color);
-  color: white;
+  padding: 0.25rem 0.65rem;
+  background-color: transparent;
+  border: 1px solid var(--global-theme-color);
+  color: var(--global-theme-color);
   text-decoration: none;
-  border-radius: 3px;
-  font-size: 0.85rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
   transition: all 0.2s ease;
   font-weight: 500;
 }
 
 .paper-link-btn:hover {
-  opacity: 0.85;
-  color: white;
+  background-color: var(--global-theme-color);
+  color: var(--global-hover-text-color);
   text-decoration: none;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -215,17 +226,18 @@ hero_image: /assets/img/hero/mountains_2.jpg
 }
 
 .research-section-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
   margin-top: 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--global-divider-color);
-  color: var(--global-text-color);
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: var(--global-theme-color);
+  letter-spacing: 0;
 }
 
 .research-section {
-  margin-bottom: 3rem;
+  margin-bottom: 3.25rem;
 }
 </style>
 
