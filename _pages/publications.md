@@ -68,12 +68,26 @@ hero_image: /assets/img/hero/mountains_2.jpg
   min-width: 0;
 }
 
+.paper-heading {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  margin-bottom: 0.45rem;
+}
+
 .paper-title {
   font-size: 1.08rem;
   font-weight: 600;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0;
   color: var(--global-text-color);
   line-height: 1.4;
+}
+
+.paper-title-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .paper-title strong {

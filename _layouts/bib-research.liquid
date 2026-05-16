@@ -14,8 +14,15 @@
     {% endif %}
     
     <div class="paper-details">
-      <div class="paper-title">
-        <strong>{{ entry.title }}</strong>
+      <div class="paper-heading">
+        <div class="paper-title">
+          <strong>{{ entry.title }}</strong>
+        </div>
+        {% if entry.ssrn %}
+          <div class="paper-title-actions">
+            <a href="{{ entry.ssrn }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">SSRN</a>
+          </div>
+        {% endif %}
       </div>
       
       {% comment %} Display coauthors {% endcomment %}
@@ -49,18 +56,23 @@
               {% endfor %}
             {%- endif -%}
 
-            {%- if forloop.length > 1 -%}
-              {% if forloop.first == false -%}
-                {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
-              {%- endif %}
-              {%- if forloop.last %}and {% endif -%}
-            {% endif %}
-            
-            {%- if coauthor_url -%}
-              <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>
+            {%- capture author_output -%}
+              {%- if coauthor_url -%}
+                <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>
+              {%- else -%}
+                {{ author.first }} {{ author.last }}
+              {%- endif -%}
+            {%- endcapture -%}
+
+            {%- if forloop.first -%}
+              {{ author_output | strip }}
+            {%- elsif forloop.last and forloop.length == 2 -%}
+              {{ " and " }}{{ author_output | strip }}
+            {%- elsif forloop.last -%}
+              {{ ", and " }}{{ author_output | strip }}
             {%- else -%}
-              {{ author.first }} {{ author.last }}
-            {% endif %}
+              {{ ", " }}{{ author_output | strip }}
+            {%- endif -%}
           {% endfor %}
         </div>
       {% endif %}
@@ -101,11 +113,8 @@
         </div>
         {% endif %}
         
-        {% if entry.links or entry.pdf or entry.slides or entry.code or entry.ssrn %}
+        {% if entry.pdf or entry.slides or entry.code %}
         <div class="paper-links" style="margin-top: 0.5rem;">
-          {% if entry.ssrn %}
-            <a href="{{ entry.ssrn }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">SSRN</a>
-          {% endif %}
           {% if entry.pdf %}
             {% if entry.pdf contains '://' %}
               <a href="{{ entry.pdf }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">PDF</a>
