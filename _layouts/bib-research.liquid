@@ -100,16 +100,16 @@
         {% assign conferences_trimmed = entry.conferences | strip %}
         {% if conferences_trimmed != "" %}
         <div class="presentations">
-          <div class="presentations-label">Presentations:</div>
-          <ul class="presentation-list">
+          <span class="presentations-label">Presentations:</span>
+          <span class="presentation-text">
           {% assign conf_list = entry.conferences | split: ';' %}
           {% for conf in conf_list %}
             {% assign conf_trimmed = conf | strip %}
             {% if conf_trimmed != "" %}
-              <li>{{ conf_trimmed }}</li>
+              {{ conf_trimmed | replace_first: '2026 ', '' | replace_first: '2025 ', '' | replace_first: '2024 ', '' | replace: '*', '<sup>*</sup>' }}{% unless forloop.last %}, {% endunless %}
             {% endif %}
           {% endfor %}
-          </ul>
+          </span>
         </div>
         {% endif %}
         

@@ -92,6 +92,12 @@ table.table a {
 .post {
   article {
     line-height: 1.65;
+
+    p,
+    li {
+      hyphens: auto;
+      text-align: justify;
+    }
   }
 
   .post-header {

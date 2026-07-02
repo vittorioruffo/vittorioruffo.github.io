@@ -139,7 +139,8 @@ hero_image: /assets/img/hero/mountains_2.jpg
   border: 1px solid var(--global-divider-color);
   border-radius: 6px;
   line-height: 1.65;
-  text-align: left;
+  hyphens: auto;
+  text-align: justify;
   font-size: 0.95rem;
 }
 
@@ -154,20 +155,17 @@ hero_image: /assets/img/hero/mountains_2.jpg
 .presentations {
   margin-top: 0.75rem;
   font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .presentations-label {
   font-weight: 600;
 }
 
-.presentation-list {
-  margin: 0.25rem 0 0;
-  padding-left: 1.2rem;
-}
-
-.presentation-list li {
-  line-height: 1.45;
-  margin: 0.1rem 0;
+.presentation-text {
+  color: var(--global-text-color);
+  hyphens: auto;
+  text-align: justify;
 }
 
 .award {
@@ -253,6 +251,22 @@ hero_image: /assets/img/hero/mountains_2.jpg
 .research-section {
   margin-bottom: 3.25rem;
 }
+
+.presentation-note {
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+  margin: -0.25rem 0 1.75rem;
+}
+
+.work-in-progress-section .research-paper {
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.65rem;
+}
+
+.work-in-progress-section .paper-authors,
+.work-in-progress-section .paper-content {
+  margin-bottom: 0;
+}
 </style>
 
 <div class="research-container">
@@ -260,10 +274,11 @@ hero_image: /assets/img/hero/mountains_2.jpg
   <div class="research-section">
     <h2 class="research-section-title">Working Papers</h2>
     {% bibliography --template bib-research --query @*[note=Working Paper] %}
+    <div class="presentation-note">(<sup>*</sup> presented by coauthor)</div>
   </div>
 
   <!-- Work in Progress Section -->
-  <div class="research-section">
+  <div class="research-section work-in-progress-section">
     <h2 class="research-section-title">Work in Progress</h2>
     {% bibliography --template bib-research --query @*[note=Work in Progress] %}
   </div>
