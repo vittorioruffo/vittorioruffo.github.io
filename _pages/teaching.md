@@ -112,7 +112,7 @@ hero_image: /assets/img/hero/mountains_1.jpg
         <li class="teaching-item">
           <span>
             <span class="teaching-title">Python Bootcamp</span>
-            <span class="teaching-meta">Master level, teaching rating 4.1/5</span>
+            <span class="teaching-meta">Master level, teaching ratings 4.1/5 and 4.4/5</span>
           </span>
           <span class="teaching-period">2025-present</span>
         </li>
@@ -141,7 +141,7 @@ hero_image: /assets/img/hero/mountains_1.jpg
             <span class="teaching-title">Corporate Finance</span>
             <span class="teaching-meta">Bachelor level, Prof. Larissa Schaefer and Prof. Yigitcan Karabulut</span>
           </span>
-          <span class="teaching-period">2024-present</span>
+          <span class="teaching-period">2024-2025</span>
         </li>
         <li class="teaching-item">
           <span>
@@ -178,7 +178,7 @@ hero_image: /assets/img/hero/mountains_1.jpg
             <span class="teaching-title">Introduction to Economics and Finance</span>
             <span class="teaching-meta">High school</span>
           </span>
-          <span class="teaching-period">2025-present</span>
+          <span class="teaching-period">2025-2026</span>
         </li>
       </ul>
     </div>
