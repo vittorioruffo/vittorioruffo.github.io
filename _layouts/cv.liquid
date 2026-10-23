@@ -40,64 +40,17 @@ layout: default
         </a>
       </div>
 
-      <div class="cv-pdf-renderer" data-pdf-url="{{ cv_pdf_url }}">
-        <p class="cv-pdf-loading">Loading CV...</p>
-      </div>
-      <noscript>
+      <object
+        class="cv-pdf-embed"
+        data="{{ cv_pdf_url }}?v={{ site.time | date: '%s' }}#view=FitH&toolbar=1&navpanes=0"
+        type="application/pdf"
+        aria-label="Vittorio Maria Ruffo CV PDF"
+      >
         <p>
-          The CV PDF can be opened here:
-          <a href="{{ cv_pdf_url }}" target="_blank" rel="noopener noreferrer">Download CV</a>.
+          Your browser cannot display the embedded PDF.
+          <a href="{{ cv_pdf_url }}" target="_blank" rel="noopener noreferrer">Open the CV PDF</a>.
         </p>
-      </noscript>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-      <script>
-        (function () {
-          var container = document.querySelector('.cv-pdf-renderer');
-          if (!container || !window.pdfjsLib) return;
-
-          var pdfUrl = container.getAttribute('data-pdf-url') + '?v=' + Date.now();
-          var renderScale = Math.min(window.devicePixelRatio || 1, 2);
-          window.pdfjsLib.GlobalWorkerOptions.workerSrc =
-            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-          window.pdfjsLib.getDocument(pdfUrl).promise.then(function (pdf) {
-            container.innerHTML = '';
-            var renderPage = function (pageNumber) {
-              return pdf.getPage(pageNumber).then(function (page) {
-                var baseViewport = page.getViewport({ scale: 1 });
-                var targetWidth = Math.min(container.clientWidth || baseViewport.width, 760);
-                var displayScale = targetWidth / baseViewport.width;
-                var viewport = page.getViewport({ scale: displayScale * renderScale });
-                var canvas = document.createElement('canvas');
-                var wrapper = document.createElement('div');
-                var context = canvas.getContext('2d');
-
-                wrapper.className = 'cv-rendered-page';
-                canvas.className = 'cv-pdf-canvas';
-                canvas.width = Math.floor(viewport.width);
-                canvas.height = Math.floor(viewport.height);
-                canvas.style.width = Math.floor(viewport.width / renderScale) + 'px';
-                canvas.style.height = Math.floor(viewport.height / renderScale) + 'px';
-
-                wrapper.appendChild(canvas);
-                container.appendChild(wrapper);
-
-                return page.render({ canvasContext: context, viewport: viewport }).promise;
-              });
-            };
-
-            var sequence = Promise.resolve();
-            for (var pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
-              sequence = sequence.then(renderPage.bind(null, pageNumber));
-            }
-            return sequence;
-          }).catch(function () {
-            container.innerHTML =
-              '<p class="cv-pdf-loading">The CV preview could not load. Use the download button above to open the PDF.</p>';
-          });
-        })();
-      </script>
+      </object>
     {% endif %}
   </article>
 </div>

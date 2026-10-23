@@ -24,9 +24,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Welcome to my webpage! I am a PhD candidate in Finance at the Frankfurt School of Finance & Management.
+I am a PhD candidate in Finance at the Frankfurt School of Finance & Management.
 
-My research interests include Asset Pricing, Option-Implied information, Decentralized Finance, News and Textual Data.
+My research interests include Asset Pricing, Option-Implied Information, Decentralized Finance, News and Textual Data.
 
 I hold an MSc in Finance from the Collegio Carlo Alberto, as well as an MSc in Quantitative Finance and a BSc in Economics and Business from the University of Verona.
 

@@ -107,7 +107,7 @@ hero_image: /assets/img/hero/mountains_1.jpg
             <span class="teaching-title">Corporate Finance</span>
             <span class="teaching-meta">Bachelor level</span>
           </span>
-          <span class="teaching-period">2026-present</span>
+          <span class="teaching-period">2026</span>
         </li>
         <li class="teaching-item">
           <span>
@@ -141,7 +141,7 @@ hero_image: /assets/img/hero/mountains_1.jpg
             <span class="teaching-title">Corporate Finance</span>
             <span class="teaching-meta">Bachelor level, Prof. Larissa Schaefer and Prof. Yigitcan Karabulut</span>
           </span>
-          <span class="teaching-period">2024-2025</span>
+          <span class="teaching-period">2024-present</span>
         </li>
         <li class="teaching-item">
           <span>
