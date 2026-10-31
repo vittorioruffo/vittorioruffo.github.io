@@ -15,9 +15,9 @@
     
     <div class="paper-details">
       <div class="paper-heading">
-        <div class="paper-title">
-          <strong>{{ entry.title }}</strong>
-        </div>
+        <h3 class="paper-title">
+          {{ entry.title }} <span class="paper-year">{{ entry.year }}</span>
+        </h3>
         {% if entry.ssrn %}
           <div class="paper-title-actions">
             <a href="{{ entry.ssrn }}" class="paper-link-btn" target="_blank" rel="noopener noreferrer">SSRN</a>
@@ -80,12 +80,15 @@
       {% comment %} Only show abstract section if abstract exists and is not empty {% endcomment %}
       {% assign abstract_trimmed = entry.abstract | strip %}
       {% if abstract_trimmed != "" %}
-      <div class="abstract-section">
-        <div class="abstract-toggle" onclick="toggleAbstract('{{ entry.key }}')">Abstract ▲</div>
-        <div id="{{ entry.key }}" class="abstract-content show">
+      <details class="abstract-section" open>
+        <summary class="paper-disclosure-toggle">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          Abstract
+        </summary>
+        <div class="abstract-content">
           {{ entry.abstract }}
         </div>
-      </div>
+      </details>
       {% endif %}
       
       <div class="paper-meta">
@@ -99,9 +102,12 @@
         {% comment %} Only show presentations if field exists and is not empty {% endcomment %}
         {% assign conferences_trimmed = entry.conferences | strip %}
         {% if conferences_trimmed != "" %}
-        <div class="presentations">
-          <span class="presentations-label">Presentations:</span>
-          <span class="presentation-text">
+        <details class="presentations">
+          <summary class="paper-disclosure-toggle">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            Presentations
+          </summary>
+          <p class="presentation-text">
           {% assign conf_list = entry.conferences | split: ';' %}
           {% for conf in conf_list %}
             {% assign conf_trimmed = conf | strip %}
@@ -109,8 +115,8 @@
               {{ conf_trimmed | replace_first: '2026 ', '' | replace_first: '2025 ', '' | replace_first: '2024 ', '' | replace: '*', '<sup>*</sup>' }}{% unless forloop.last %}, {% endunless %}
             {% endif %}
           {% endfor %}
-          </span>
-        </div>
+          </p>
+        </details>
         {% endif %}
         
         {% if entry.pdf or entry.slides or entry.code %}

@@ -14,16 +14,6 @@ hero_image: /assets/img/hero/mountains_2.jpg
   margin: 0 auto;
 }
 
-.research-container h2.bibliography {
-  border: 0;
-  color: var(--global-text-color-light);
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin: 0 0 1rem;
-  padding: 0;
-  text-align: left;
-}
-
 .research-container ol.bibliography {
   list-style: none;
   margin: 0;
@@ -35,11 +25,11 @@ hero_image: /assets/img/hero/mountains_2.jpg
 }
 
 .research-paper {
-  margin-bottom: 2.75rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
 }
 
-.research-paper:not(:last-child) {
+.research-container ol.bibliography > li:not(:last-child) .research-paper {
   border-bottom: 1px solid var(--global-divider-color);
 }
 
@@ -79,7 +69,7 @@ hero_image: /assets/img/hero/mountains_2.jpg
 .paper-title {
   font-size: 1.08rem;
   font-weight: 600;
-  margin-bottom: 0;
+  margin: 0;
   color: var(--global-text-color);
   line-height: 1.4;
 }
@@ -90,8 +80,12 @@ hero_image: /assets/img/hero/mountains_2.jpg
   gap: 0.4rem;
 }
 
-.paper-title strong {
-  font-weight: 600;
+.paper-year {
+  color: var(--global-text-color-light);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-left: 0.4rem;
+  white-space: nowrap;
 }
 
 .paper-authors {
@@ -117,22 +111,45 @@ hero_image: /assets/img/hero/mountains_2.jpg
   margin: 0.65rem 0;
 }
 
-.abstract-toggle {
+.paper-disclosure-toggle {
+  align-items: center;
   cursor: pointer;
   color: var(--global-theme-color);
+  display: flex;
+  gap: 0.45rem;
   font-weight: 500;
+  list-style: none;
+  min-height: 2rem;
   user-select: none;
-  display: inline-block;
-  margin-bottom: 0.45rem;
   font-size: 0.92rem;
 }
 
-.abstract-toggle:hover {
+.paper-disclosure-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.paper-disclosure-toggle i {
+  font-size: 0.7rem;
+  text-align: center;
+  width: 0.8rem;
+}
+
+details[open] > .paper-disclosure-toggle i {
+  transform: rotate(90deg);
+}
+
+.paper-disclosure-toggle:hover {
   text-decoration: underline;
 }
 
+.paper-disclosure-toggle:focus-visible,
+.paper-link-btn:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
 .abstract-content {
-  display: none;
   margin-top: 0.6rem;
   padding: 1rem 1.25rem;
   background-color: var(--global-card-bg-color);
@@ -142,10 +159,6 @@ hero_image: /assets/img/hero/mountains_2.jpg
   hyphens: auto;
   text-align: justify;
   font-size: 0.95rem;
-}
-
-.abstract-content.show {
-  display: block;
 }
 
 .paper-meta {
@@ -158,13 +171,10 @@ hero_image: /assets/img/hero/mountains_2.jpg
   line-height: 1.55;
 }
 
-.presentations-label {
-  font-weight: 600;
-}
-
 .presentation-text {
   color: var(--global-text-color);
   hyphens: auto;
+  margin: 0.5rem 0 0;
   text-align: justify;
 }
 
@@ -273,28 +283,13 @@ hero_image: /assets/img/hero/mountains_2.jpg
   <!-- Working Papers Section -->
   <div class="research-section">
     <h2 class="research-section-title">Working Papers</h2>
-    {% bibliography --template bib-research --query @*[note=Working Paper] %}
+    {% bibliography --template bib-research --query @*[note=Working Paper] --group_by none %}
     <div class="presentation-note">(<sup>*</sup> presented by coauthor)</div>
   </div>
 
   <!-- Work in Progress Section -->
   <div class="research-section work-in-progress-section">
     <h2 class="research-section-title">Work in Progress</h2>
-    {% bibliography --template bib-research --query @*[note=Work in Progress] %}
+    {% bibliography --template bib-research --query @*[note=Work in Progress] --group_by none %}
   </div>
 </div>
-
-<script>
-function toggleAbstract(id) {
-  var abstract = document.getElementById(id);
-  var toggle = abstract.previousElementSibling;
-  
-  if (abstract.classList.contains('show')) {
-    abstract.classList.remove('show');
-    toggle.innerHTML = 'Abstract ▼';
-  } else {
-    abstract.classList.add('show');
-    toggle.innerHTML = 'Abstract ▲';
-  }
-}
-</script>

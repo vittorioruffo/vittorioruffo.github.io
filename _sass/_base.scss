@@ -111,6 +111,11 @@ table.table a {
   }
 }
 
+.post.about-page article p {
+  hyphens: none;
+  text-align: left;
+}
+
 .table-dark {
   background-color: transparent;
   &.table-bordered {
