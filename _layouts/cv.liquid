@@ -44,17 +44,11 @@ layout: default
         </a>
       </div>
 
-      <object
+      <iframe
         class="cv-pdf-embed"
-        data="{{ cv_pdf_url }}?v={{ site.time | date: '%s' }}#view=FitH&toolbar=1&navpanes=0"
-        type="application/pdf"
-        aria-label="Vittorio Maria Ruffo CV PDF"
-      >
-        <p>
-          Your browser cannot display the embedded PDF.
-          <a href="{{ cv_pdf_url }}" target="_blank" rel="noopener noreferrer">Open the CV PDF</a>.
-        </p>
-      </object>
+        src="{{ '/cv/viewer/' | relative_url }}?file={{ cv_pdf_url | url_encode }}&amp;v={{ site.time | date: '%s' }}"
+        title="Vittorio Maria Ruffo CV PDF viewer"
+      ></iframe>
     {% endif %}
   </article>
 </div>

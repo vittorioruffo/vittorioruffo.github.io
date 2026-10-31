@@ -1,0 +1,58 @@
+---
+layout: none
+permalink: /cv/viewer/
+sitemap: false
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Vittorio Maria Ruffo CV PDF</title>
+    <link rel="stylesheet" href="{{ '/assets/lib/pdfjs/6.4.299/pdf_viewer.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/lib/pdfjs/cv-viewer.css' | relative_url }}">
+    <script type="module" src="{{ '/assets/js/cv-pdf-viewer.mjs' | relative_url }}"></script>
+  </head>
+  <body>
+    <div class="pdf-toolbar" role="toolbar" aria-label="PDF controls">
+      <div class="pdf-toolbar-group">
+        <button id="previousPage" type="button" title="Previous page" aria-label="Previous page" disabled>
+          <img src="{{ '/assets/lib/pdfjs/6.4.299/images/toolbarButton-pageUp.svg' | relative_url }}" alt="">
+        </button>
+        <input id="pageNumber" type="number" min="1" value="1" inputmode="numeric" aria-label="Page number" disabled>
+        <span aria-hidden="true">/</span>
+        <span id="pageCount" aria-label="Total pages">-</span>
+        <button id="nextPage" type="button" title="Next page" aria-label="Next page" disabled>
+          <img src="{{ '/assets/lib/pdfjs/6.4.299/images/toolbarButton-pageDown.svg' | relative_url }}" alt="">
+        </button>
+      </div>
+      <div class="pdf-toolbar-group">
+        <button id="zoomOut" type="button" title="Zoom out" aria-label="Zoom out" disabled>
+          <img src="{{ '/assets/lib/pdfjs/6.4.299/images/toolbarButton-zoomOut.svg' | relative_url }}" alt="">
+        </button>
+        <button id="zoomIn" type="button" title="Zoom in" aria-label="Zoom in" disabled>
+          <img src="{{ '/assets/lib/pdfjs/6.4.299/images/toolbarButton-zoomIn.svg' | relative_url }}" alt="">
+        </button>
+        <select id="zoomLevel" aria-label="Zoom level" disabled>
+          <option value="page-width">Fit width</option>
+          <option value="page-fit">Fit page</option>
+          <option value="1">100%</option>
+          <option value="1.25">125%</option>
+          <option value="1.5">150%</option>
+          <option value="2">200%</option>
+          <option value="custom" hidden>100%</option>
+        </select>
+      </div>
+    </div>
+    <main class="pdf-stage">
+      <p id="viewerStatus" class="pdf-status" role="status">Loading CV...</p>
+      <div id="viewerContainer" tabindex="0" aria-label="CV PDF pages" aria-busy="true">
+        <div id="viewer" class="pdfViewer"></div>
+      </div>
+      <noscript>
+        <p class="pdf-status">JavaScript is needed for this preview. <a href="{{ '/cv/' | relative_url }}" target="_top">Open the CV page</a> to download the PDF.</p>
+      </noscript>
+    </main>
+  </body>
+</html>
